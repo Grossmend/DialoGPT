@@ -1,0 +1,130 @@
+body{margin-top:20px;}
+
+.chat-online {
+    color: #34ce57
+}
+
+.chat-offline {
+    color: #e4606d
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 650px;
+    overflow-y: scroll
+}
+
+.chat-message-left,
+.chat-message-right {
+    display: flex;
+    flex-shrink: 0
+}
+
+.chat-message-left {
+    margin-right: auto
+}
+
+.chat-message-right {
+    flex-direction: row-reverse;
+    margin-left: auto
+}
+.py-3 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
+.flex-grow-0 {
+    flex-grow: 0!important;
+}
+.border-top {
+    border-top: 1px solid #dee2e6!important;
+}
+
+
+/*////////////////////////////////////////////////////*/
+
+.input-group-prepend {
+  width : 80%!important;
+}
+
+.input-group-hint-param {
+  width: 10%!important;
+  color: green!important;
+}
+
+/*////////////////////////////////////////////////////*/
+
+.pointer:hover {
+    cursor: pointer!important;
+}
+
+.input_settings_without_bottom {
+    background-color: #e9ecef;
+    border-top: 1px solid #ced4da!important;
+    border-right: 1px solid #ced4da!important;
+    border-left: 1px solid #ced4da!important;
+    border-bottom: 0px solid #ced4da!important;
+    border-radius: .0rem!important;
+}
+
+.input_settings_without_top_bottom {
+    background-color: #e9ecef;
+    border-top: .0rem!important;
+    border-right: 1px solid #ced4da!important;
+    border-left: 1px solid #ced4da!important;
+    border-bottom: 0px solid #ced4da!important;
+    border-radius: .0rem!important;
+}
+
+.input_settings {
+    background-color: #e9ecef;
+    border-top: 1px solid #ced4da!important;
+    border-right: 1px solid #ced4da!important;
+    border-left: 1px solid #ced4da!important;
+    border-bottom: 1px solid #ced4da!important;
+    border-radius: .0rem!important;
+}
+
+.variants {
+    color: #495057!important;
+    background-color: #F4E5FA!important;
+    border-color: #8c898c54!important;
+    border-radius: .0rem!important;
+}
+
+.variants:hover {
+    color: black!important;
+    background-color: #DEF3DB!important;
+}
+
+.msg_edit {
+    border-radius: .0rem!important;
+    border-width: 1px;
+    border-color: red!important;
+}
+
+.msg_rep {
+
+}
+
+.btn_style {
+    color: #212529!important;
+    background-color: #C8DFF5!important;
+    border-color: #C8DFF5!important;
+    border-radius: .0rem!important;
+}
+
+.btn_style:hover:enabled {
+    color: #212529!important;
+    background-color: #AFDBA9!important;
+    border-color: #A3A0A4!important;
+    border-radius: .0rem!important;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    outline: none;
+}

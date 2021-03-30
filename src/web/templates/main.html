@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="content">
+    <div class="container p-0">
+		<br>
+		<div class="card" style="border:none;!important;">
+			<div class="row g-0">
+				<div class="col-12 col-lg-4 col-xl-4 content-box pr-2 pl-2">
+					<div id="settings_title"
+						class="container p-1 border-right border-left border-top">
+						<div class="d-flex justify-content-center pb-3 pt-3">
+							<a><b>Настройки генерации</b></a>
+						</div>
+					</div>
+					<div id="settings_responses_area"
+						class="container pr-3 pl-3 pb-3 pt-0 border-right border-bottom border-left">
+						<div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="Длина генерируемого ответа: &#013;0 ---> не задан&#013;1 ---> короткий&#013;2 ---> средний&#013;3 ---> длинный">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">Length generate</span>
+								</div>
+								<input id="input_length" type="text" value="1"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_length">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="Максимальная длина (токенов) генерации: &#013;[целое число диапазон 8-256]">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">Max length tokens generate</span>
+								</div>
+								<input id="input_max_length" type="text" value="256"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_max_length">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="[целое число от 1-10]">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">No repeat ngram size</span>
+								</div>
+								<input id="input_no_repeat_ngram_size" type="text" value="3"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_no_repeat_ngram">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="[целое число от 2-500]">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">Top K</span>
+								</div>
+								<input id="input_top_k" type="text" value="75"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_top_k">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="[плавующее число от 0.01-1.0]">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">Top P</span>
+								</div>
+								<input id="input_top_p" type="text" value="0.9"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_top_p">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend w-35">
+									<span class="input-group-text input-group-hint-param p-1 input_settings_without_bottom justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="[плавующее число от 0.01-1.0]">?</span><span
+										class="input-group-text w-100 input_settings_without_bottom">Temperature</span>
+								</div>
+								<input id="input_temperature" type="text" value="0.6"
+									class="form-control input_settings_without_bottom"
+									aria-label="label_temperature">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text input-group-hint-param p-1 input_settings justify-content-center"
+										data-toggle="tooltip" data-placement="bottom"
+										title="[целое число от 1-10]">?</span><span
+										class="input-group-text w-100 input_settings">Num responses return</span>
+								</div>
+								<input id="input_num_return" type="text" value="3"
+									class="form-control input_settings"
+									aria-label="label_num_return">
+							</div>
+						</div>
+						<div>
+							<!--                        <div class="input-group">-->
+							<!--                            <div class="input-group-prepend">-->
+							<!--                                <span class="input-group-text w-100 input_settings_without_bottom">Do sample?</span>-->
+							<!--                                <div class="input-group-text input_settings_without_bottom">-->
+							<!--                                    <input id="input_do_sample" type="checkbox" checked="checked" aria-label="label_do_sample">-->
+							<!--                                </div>-->
+							<!--                            </div>-->
+							<!--                        </div>-->
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text w-100 input_settings_without_top_bottom">Use GPU?</span>
+									<div class="input-group-text input_settings_without_top_bottom">
+										<input id="input_use_gpu" type="checkbox"
+											aria-label="label_use_gpu">
+									</div>
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text w-100 input_settings">Show variants responses?</span>
+									<div class="input-group-text input_settings">
+										<input id="input_show_variants" type="checkbox" aria-label="label_show_variants">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="variants_title" class="container p-1 border-right border-left"
+						style="display:none;">
+						<div class="d-flex justify-content-center pb-3 pt-3">
+							<a><b>Варианты ответов</b></a>
+						</div>
+					</div>
+					<div id="variants_responses_area"
+						class="container pr-2 pl-2 pb-2 pt-0 border-right border-left border-bottom"
+						style="display:none;">
+					</div>
+				</div>
+				<div class="col-12 col-lg-8 col-xl-8 pr-2 pl-2">
+					<div class="py-2 px-4 border-bottom d-none d-lg-block border-right border-left border-top">
+						<div class="d-flex align-items-center py-1">
+							<div class="position-relative">
+								<img src="{{ url_for('static', filename='files/images/image_bot.jpg') }}"
+									class="rounded-circle mr-1" alt="Sharon Lessman" width="40"
+									height="40">
+							</div>
+							<div class="flex-grow-1 pl-3">
+								<strong>DialoGPT</strong> <i><a style="color:grey;"
+									id="text_status_typing"></a></i>
+								<!--                                <div class="text-muted small"><em>Typing...</em></div>-->
+							</div>
+							<!--                            <button id="btn_get_dialog" class="btn btn-primary submit ml-2">Получить диалог</button>-->
+							<button id="btn_clear_dialog"
+								class="btn btn-primary submit ml-2 btn_style">Очистить диалог
+							</button>
+						</div>
+					</div>
+					<div id="page_messages_area" class="position-relative border-left border-right">
+						<div id="messages_area" class="chat-messages p-4">
+						</div>
+					</div>
+					<div class="flex-grow-0 py-3 px-4 border">
+						<div class="input-group">
+							<input id="input_send_message" type="text"
+								class="form-control mr-2 input_settings"
+								placeholder="Введите сообщение">
+							<button id="btn_send_message"
+								class="btn btn-primary submit ml-2 btn_style">Отправить
+							</button>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

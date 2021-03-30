@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="content">
+    <div class="container">
+        <br>
+        <div class="p-1"><a><b>Вводная статья по настройке генерации:</b></a></div>
+        <div class="p-1"><a href="https://huggingface.co/blog/how-to-generate" target="_blank">https://huggingface.co/blog/how-to-generate</a></div>
+        <br>
+        <br>
+        <div class="p-1"><a><b>Об обучении:</b></a></div>
+        <div class="p-1"><a>- Модель учил на комментариях Пикабу (~92%), YouTube (~6%) и VK (~2%)<br>
+            - Датасет для обучения содержал 41 миллион сэмплов<br>
+            - Обучалась 2 эпохи, 660000 степов на 4x RTX 2080 TI в течении 12 дней с батч сайзом 128<br>
+            - <b style="color:#FD2E2E;">Модель содержит ненормативную лексику</b></a></div>
+    </div>
+</main>
+{% endblock %}
