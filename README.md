@@ -1,6 +1,8 @@
 # DialoGPT
 Web and service for conversation with RuDialoGPT
 
+# Article on Habr: https://habr.com/ru/company/icl_services/blog/548244/
+
 **Create environment:**
 1. conda create -n rudialogpt python==3.7.9
 2. conda activate rudialogpt
